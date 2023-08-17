@@ -1,10 +1,6 @@
-@import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
-
 .app {
     background-color: #111; 
-    font-family: 'Josefin Sans', cursive;
 }
-
 
 @media (orientation: landscape) {
     body {

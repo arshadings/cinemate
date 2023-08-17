@@ -4,9 +4,6 @@ import './LoginScreen.css';
 import SignupScreen from './SignupScreen';
 import { FaChevronRight } from "react-icons/fa";
 
-
-
-
 function LoginScreen() {
 
     const [signIn, setSignIn] = useState(false); 
@@ -25,7 +22,6 @@ function LoginScreen() {
 
             <div className='loginScreen__gradient' />
             
-                
             <div className='loginScreen__body'>
 
                 {signIn ? (
@@ -49,9 +45,7 @@ function LoginScreen() {
                         </form>
                     </div>
                 </>
-                )}
-
-                
+                )} 
             </div>
         </div>
     </div>
