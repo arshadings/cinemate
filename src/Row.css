@@ -15,17 +15,43 @@
 }
 
 .row__poster {
-    max-height: 100px;
+    max-height: 125px;
+    border-radius: 5px;
     object-fit: contain;
     margin-right: 10px;
     transition: transform 450ms;
 }
 
 .row__poster:hover {
-    transform: scale(1.09);
+    transform: scale(1.3);
     opacity: 1;
 }
 
 .row__posterLarge {
     max-height: 250px;
+}
+
+.row__movieName {
+    width: 90%;
+}
+
+
+.row__movieDetails {
+    display: none;
+    position: absolute;
+}
+
+.row__posterDetails:hover .row__movieDetails{
+    display: block;
+}
+
+
+@media only screen and (max-width: 640px) {
+    .row__poster {
+        max-height: 100px;
+    }
+
+    .row__posterLarge {
+        max-height: 250px;
+    }
 }
