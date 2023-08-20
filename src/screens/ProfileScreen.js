@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './ProfileScreen.css';
 import Nav from '../Nav';
 import avatar from '../assets/avatar.png';
@@ -6,24 +6,104 @@ import { useSelector } from 'react-redux';
 import { selectUser } from '../features/userSlice';
 import { auth } from '../firebase';
 import PlansScreen from './PlansScreen';
+import { loadStripe } from '@stripe/stripe-js';
+import db from '../firebase';
 
 function ProfileScreen() {
 
-    const user = useSelector(selectUser)
+    const activeUser = useSelector(selectUser)
+
+    const [products, setProducts] = useState([]);
+    const user = useSelector(selectUser);
+    const [subscription, setSubscription] = useState('');
+
+    console.log('subscription is: ', subscription)
+
+
+    useEffect( () => {
+        db.collection('customers')
+        .doc(user.uid)
+        .collection('subscriptions')
+        .get()
+        .then(querySnapshot => {
+            querySnapshot.forEach( async subscription => {
+                setSubscription({
+                    role: subscription.data().role,
+                    current_period_end: subscription.data().current_period_end.seconds,
+                    current_period_start: subscription.data().current_period_start.seconds
+                })
+            } )
+        })
+    }, [user.uid] )
+
+
+    useEffect( () => {
+        db.collection('products')
+        .where('active', '==', true)
+        .get().then(querySnapshot => {
+            const products = {};
+            querySnapshot.forEach( async productDoc => {
+                products[productDoc.id] = productDoc.data();
+                const priceSnap = await productDoc.ref.collection
+                ('prices').get();
+                priceSnap.docs.forEach( price => {
+                    products[productDoc.id].prices = {
+                        priceId: price.id,
+                        priceData: price.data()
+                    }
+                } )
+            } )
+            setProducts(products);
+        });
+    }, [] );
+
+    console.log('list of products: ', products);
+    console.log('subscription: ', subscription);
+
+    const loadCheckout = async (priceId) => {
+        const docRef = await db.collection('customers')
+        .doc(user.uid).collection('checkout_sessions')
+        .add({
+            price: priceId,
+            success_url: window.location.origin,
+            cancel_url: window.location.origin
+        });
+
+        docRef.onSnapshot(async(snap) => {
+            const { error, sessionId } = snap.data();
+
+            if(error) {
+                //TODO: Show an error popup
+                alert(`An error occured: ${error.message}`);
+            }
+
+            if(sessionId) {
+                //We have a session, let's redirect to checkout
+                
+                const stripe = await loadStripe('pk_test_51NfJHfSJGqWEtkL1FQTqGFFbTajLmSjYfQIPivddiDmaqdx6sIsuQAfdJajat8PBkmmlSRjJySlOCNL4Z4aY1Hzi00VQDw08wU')
+                stripe.redirectToCheckout({ sessionId });
+            }
+        })
+    }
+
 
   return (
     <div className='profileScreen'>
-        <Nav />
+        <Nav subscription={subscription.role}/>
         <div className='profileScreen__body'>
             <h1>Subscription details</h1>
             <div className='profileScreen__info'>
                 <img src={avatar} alt='avatar' />
                 <div className='profileScreen__details'>
-                    <h2>Your email id: {user.email}</h2>
+                    <h2>Your email id: {activeUser.email}</h2>
                     <div className='profileScreen__plans'>
                         <p className='profileScreen__plansHeading'>Plans</p>
                         
-                        <PlansScreen />
+                        <PlansScreen 
+                        products={products}                        
+                        subscription={subscription}
+                        loadCheckout={loadCheckout}
+                        />
                         <button 
                             className='profileScreen__signOut' 
                             onClick={ () => auth.signOut() }

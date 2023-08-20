@@ -29,7 +29,7 @@ function Row({title, fetchURL, isLargeRow = false}) {
                 (( isLargeRow && movie.poster_path ) ||
                 (!isLargeRow && movie.backdrop_path)) && (
                   <div className='row__posterDetails'>
-                    <div>
+                    <div className='row__posterImage'>
                       <img 
                         className={`row__poster ${isLargeRow && 'row__posterLarge'}`}
                         key={movie.id}
@@ -37,14 +37,14 @@ function Row({title, fetchURL, isLargeRow = false}) {
                         isLargeRow ? movie.poster_path : movie.backdrop_path
                         }`} 
                         alt={movie.title} 
-                    />
+                      />
                     </div>
                     <div className='row__movieDetails'>
-                    {
-                      isLargeRow ? <p className='row__movieName'>{movie.name}</p> : <p className='row__movieName'>{movie.title}</p>
-                    }
-                    <p>{movie.first_air_date}</p>
-                    <p><span><AiFillStar className='row__startIcon' /></span>{movie.vote_average}</p>
+                      {
+                        isLargeRow ? <p className='row__movieName'>{movie.name}</p> : <p className='row__movieName'>{movie.title}</p>
+                      }
+                      <p>{movie.first_air_date}</p>
+                      <p><span><AiFillStar className='row__startIcon' /></span>{movie.vote_average}</p>
                     </div>
                   </div>
                 )

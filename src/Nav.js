@@ -4,7 +4,9 @@ import logo from './assets/logo.png';
 import avatar from './assets/avatar.png';
 import { useNavigate } from 'react-router-dom';
 
-function Nav() {
+function Nav({subscription}) {
+
+  console.log('role is: ', subscription)
 
   const [show, setShow] = useState(false);
   const navigate = useNavigate()
@@ -23,11 +25,18 @@ function Nav() {
     return () => window.removeEventListener('scroll', transitionNavBar)
   }, [] )
 
+  const handleNavigation = () => {
+    if(subscription === ('basic' || 'standard' || 'premium'))
+       navigate('/')
+    else
+      alert("Please subscribe to any of the plans")
+  }
+
   return (
     <div className={`nav ${show && 'nav__black'}`}>
       <div className='nav__contents'>
         <img 
-            onClick={ () => navigate('/') }
+            onClick={ handleNavigation }
             className='nav__logo'
             src={ logo } 
             alt='Cinemate logo' 
