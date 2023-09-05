@@ -61,6 +61,7 @@ function ProfileScreen() {
     console.log('subscription: ', subscription);
 
     const loadCheckout = async (priceId) => {
+        console.log("priceId is: ", priceId)
         const docRef = await db.collection('customers')
         .doc(user.uid).collection('checkout_sessions')
         .add({
@@ -80,7 +81,7 @@ function ProfileScreen() {
             if(sessionId) {
                 //We have a session, let's redirect to checkout
                 
-                const stripe = await loadStripe('pk_test_51NfJHfSJGqWEtkL1FQTqGFFbTajLmSjYfQIPivddiDmaqdx6sIsuQAfdJajat8PBkmmlSRjJySlOCNL4Z4aY1Hzi00VQDw08wU')
+                const stripe = await loadStripe('pk_test_51NhbHRSBRaRDtleaDjETzHPAgt0Nj5y0GexElnghLkskCUhp5rh4iCtKwNqK1WIut547Og0Qx6WE0jJnT3NrNW7q00J9LkEjTq')
                 stripe.redirectToCheckout({ sessionId });
             }
         })

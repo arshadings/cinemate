@@ -3,13 +3,25 @@ import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
 
 const firebaseConfig = {
-    apiKey: "XXXXXXXXXXXXXXX",
-    authDomain: "cinemate-83ca8.firebaseapp.com",
-    projectId: "cinemate-83ca8",
-    storageBucket: "cinemate-83ca8.appspot.com",
-    messagingSenderId: "1007094090949",
-    appId: "1:1007094090949:web:7a757d06a34ff3d79ff4ac"
-  };
+  apiKey: "AIzaSyBFV28uGR7TjIi4sa6gqYxmPQI_tMS4MK0",
+  authDomain: "cinemate-83ca8.firebaseapp.com",
+  projectId: "cinemate-83ca8",
+  storageBucket: "cinemate-83ca8.appspot.com",
+  messagingSenderId: "1007094090949",
+  appId: "1:1007094090949:web:7a757d06a34ff3d79ff4ac"
+};
+
+// firebase.firestore().settings({
+//   ignoreUndefinedProperties: true,
+// })
+
+// await firebase
+//   .firestore()
+//   .collection('products')
+//   .doc(productId)
+//   .update({
+//     name: undefined, // Won't throw an error
+//   })
 
   const firebaseApp = firebase.initializeApp(firebaseConfig);
   const db = firebaseApp.firestore();
