@@ -11,18 +11,6 @@ const firebaseConfig = {
   appId: "1:1007094090949:web:7a757d06a34ff3d79ff4ac"
 };
 
-// firebase.firestore().settings({
-//   ignoreUndefinedProperties: true,
-// })
-
-// await firebase
-//   .firestore()
-//   .collection('products')
-//   .doc(productId)
-//   .update({
-//     name: undefined, // Won't throw an error
-//   })
-
   const firebaseApp = firebase.initializeApp(firebaseConfig);
   const db = firebaseApp.firestore();
   const auth = firebase.auth();

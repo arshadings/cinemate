@@ -16,6 +16,7 @@ function ProfileScreen() {
     const [products, setProducts] = useState([]);
     const user = useSelector(selectUser);
     const [subscription, setSubscription] = useState('');
+    const [loading, setLoading] = useState(false)
 
     console.log('subscription is: ', subscription)
 
@@ -61,6 +62,7 @@ function ProfileScreen() {
     console.log('subscription: ', subscription);
 
     const loadCheckout = async (priceId) => {
+        setLoading(true)
         console.log("priceId is: ", priceId)
         const docRef = await db.collection('customers')
         .doc(user.uid).collection('checkout_sessions')
@@ -80,9 +82,9 @@ function ProfileScreen() {
 
             if(sessionId) {
                 //We have a session, let's redirect to checkout
-                
                 const stripe = await loadStripe('pk_test_51NhbHRSBRaRDtleaDjETzHPAgt0Nj5y0GexElnghLkskCUhp5rh4iCtKwNqK1WIut547Og0Qx6WE0jJnT3NrNW7q00J9LkEjTq')
                 stripe.redirectToCheckout({ sessionId });
+                setLoading(false)
             }
         })
     }
@@ -109,6 +111,17 @@ function ProfileScreen() {
                             className='profileScreen__signOut' 
                             onClick={ () => auth.signOut() }
                         >Sign Out</button>
+                    </div>
+                    <div>
+                        {
+                            loading && 
+                            <div className='subscription__loading'>
+                                <div className='loader__symbol'>
+                                    <span className="loader"></span>
+                                </div>
+                                
+                            </div>
+                        }
                     </div>
                 </div>
             </div>
