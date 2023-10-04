@@ -30,19 +30,32 @@
     margin-bottom: 30px;
 }
 
-.loginScreen__body > h3 {
+.loginScreen__body > h3, .loginSection__bottomholder > h3 {
     font-size: 20px;
     font-weight: 400;
 }
 
 .loginScreen__logo {
-    position: fixed;
+    position: absolute;
     left: 0;
     width: 150px;
     object-fit: contain;
     padding: 20px 0 0 20px;
 }
 
+.loginScreen__button {
+    position: absolute;
+    right: 20px;
+    top: 25px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #e50914;
+    font-weight: 600;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
 
 .loginScreen__gradient {
     width: 100%;
@@ -57,19 +70,6 @@
     );
 }
 
-.loginScreen__button {
-    position: fixed;
-    right: 20px;
-    top: 25px;
-    padding: 10px 20px;
-    font-size: 1rem;
-    color: #fff;
-    background-color: #e50914;
-    font-weight: 600;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
 
 .loginScreen__input > form > input {
     padding: 10px;
@@ -117,6 +117,208 @@
     margin-right: auto;
 }
 
+.firstSection, .secondSection, .thirdSection, .fourthSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: #000;
+    border-top: 8px solid rgba(78, 78, 78, .5);
+    padding: 0rem 0rem;
+}
+
+.firstSection__left {
+    margin-left: 12%;
+    padding-right: 30px;
+    
+}
+
+.firstSection__left > h2, 
+.secondSection__left > h2, 
+.thirdSection__left > h2, 
+.fourthSection__left > h2 {
+    font-size: 3rem;
+    font-weight: 900;
+    margin-bottom: 15px;
+}
+
+.firstSection__left > p,
+.secondSection__left > p,
+.thirdSection__left > p,
+.fourthSection__left > p {
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+.firstSection__right {
+    margin: 9% 0 9% 0%; 
+}
+
+.firstSection__right > img {
+    height: 70%;
+    width: 70%;    
+}
+
+
+.secondSection, .fourthSection {
+    flex-direction: row-reverse;
+    padding: 4.5rem;
+}
+
+.secondSection__left {
+    margin: 2% 10% 0% 5%;
+
+}
+
+.secondSection__right {
+    margin: 0% 5% 0% 8%;
+}
+
+.secondSection__right > img {
+    height: 130%;
+    width: 130%;
+}
+
+.thirdSection {
+    padding: 5.7rem 0rem;
+}
+
+.thirdSection__left {
+    margin-left: 12%;
+}
+
+.thirdSection__right {
+    margin-right: 15%;
+}
+
+.thirdSection__right > img {
+    height: 100%;
+    width: 100%;
+}
+
+.fourthSection__right > img {
+    height: 100%;
+    width: 180%;
+}
+
+
+.fourthSection__right {
+    margin: 0% 0% 0% 8%;
+}
+
+.fourthSection__left {
+    margin: 0% 0% 0% 15%;
+}
+
+.fourthSection__left {
+    padding: 0 5%;
+}
+
+.faqSection {
+    background-color: #000;
+    border-top: 8px solid rgba(78, 78, 78, .5);
+    color: #fff;
+    padding: 72px 0;
+}
+
+.faqSection__container {
+    margin: 0 12%;
+}
+
+.faqSection__content > h2 {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 900;
+}
+
+.faqSection__questions {
+    margin: 24px 0 0 0;
+}
+
+.faqSection__question {
+    text-align: left;
+}
+
+.faqSection__questions > ul {
+    list-style: none;
+}
+
+.faqSection__list {
+    margin-bottom: 8px;
+}
+
+.faqSection__button {
+    background-color: rgb(45, 45, 45);
+    outline: none;
+    border: none;
+    color: #fff;
+    padding: 24px;
+    width: 100%;
+    font-size: 1.5rem;
+    justify-content: space-between;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.faqSection__button:hover {
+    background-color: rgb(63, 63, 63);
+    transition: 0.3s;
+}
+
+.faqSection__unlist {
+    font-size: 1.5rem;
+    padding: 0;
+}
+
+.faqSection__plusIcon {
+    font-size: 30px;
+}
+
+.description__section {
+    margin-top: 2px;
+    max-height: 75rem;
+    padding: 1.5rem;
+    font-size: 22px;
+    overflow: hidden;
+    visibility: visible;
+    transition: all 2s cubic-bezier(0.5, 0, 0.1, 1);
+    text-align: left;
+    background-color: rgb(45, 45, 45);
+}
+
+.pre-line {
+    white-space: pre-line;
+}
+
+.loginSection__bottomContainer {
+    margin-top: 2.85rem;
+    text-align: center;
+}
+
+.loginSection__bottomholder {
+    padding: 0 6%;
+}
+
+.loginScreen__footer {
+    background-color: #000;
+    border-top: 8px solid rgba(78, 78, 78, .5);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.loginScreen__footerText {
+    margin: 5%;
+    font-size: 18px;
+}
+
+.heartIcon {
+    margin-left: 5px;
+}
 
 
 
@@ -137,9 +339,66 @@
     }
     
     #email {
-        margin-top: 20px;
         width: 90%;
     }
 
+    .firstSection, .secondSection, .thirdSection, .fourthSection {
+        flex-direction: column;
+        padding: 3.5rem 0;
+        text-align: center;
+    }
+
+    .secondSection__left, .fourthSection__left, .fourthSection__right {
+        margin: auto;
+    }
+
+    .secondSection__right > img {
+        height: 100%;
+        width: 100%;
+    }
+
+    .thirdSection__left {
+        margin: auto;
+    }
+
+    .thirdSection__right {
+        margin: auto;
+        height: 80%;
+        width: 80%;
+    }
+
+    .fourthSection__right > img {
+        height: 100%;
+        width: 100%;
+    }
+
+    .cardHeading {
+        font-size: 2rem !important;
+        font-weight: 700 !important;
+    }
+
+    .cardDescription {
+        font-size: 18px !important;
+    }
+
+    .faqSection__button, .description__section {
+        font-size: 18px;
+    }
+
+    .faqSection__plusIcon {
+        font-size: 18px;
+    }
+
+    .faqSection__container {
+        margin: 0 24px;
+    }
+
+    .faqSection__content > h2 {
+        font-size: 2rem;
+    }
     
+    .loginScreen__footerText {
+        margin: 15%;
+    }
+
 }
