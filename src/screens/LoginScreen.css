@@ -2,8 +2,28 @@
     position: relative;
     height: 100%;
     background: url('../assets/login_background.jpeg') center no-repeat;
-    background-size: cover;
-    
+    background-size: cover; 
+}
+
+.loginScreen__main {
+    margin: 0% auto 13% auto;
+    padding: 0 20px;
+}
+
+.loginScreen__main > h1 {
+    font-size: 3.125rem;
+    margin-bottom: 20px;
+}
+
+.loginScreen__main > h2 {
+    font-size: 24px;
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+
+.loginScreen__main > h3, .loginSection__bottomholder > h3 {
+    font-size: 20px;
+    font-weight: 400;
 }
 
 .loginScreen__body {
@@ -14,23 +34,11 @@
     text-align: center;
     z-index: 1;
     color: #fff;
-    padding: 0 20px;
     left: 0;
     right: 0;
 }
 
-.loginScreen__body > h1 {
-    font-size: 3.125rem;
-    margin-bottom: 20px;
-}
-
-.loginScreen__body > h2 {
-    font-size: 24px;
-    font-weight: 400;
-    margin-bottom: 30px;
-}
-
-.loginScreen__body > h3, .loginSection__bottomholder > h3 {
+.loginSection__bottomholder > h3 {
     font-size: 20px;
     font-weight: 400;
 }
@@ -125,6 +133,7 @@
     background-color: #000;
     border-top: 8px solid rgba(78, 78, 78, .5);
     padding: 0rem 0rem;
+    text-align: left;
 }
 
 .firstSection__left {
@@ -329,8 +338,12 @@
         top: 20%;
     }
 
-    .loginScreen__body > h1 {
-        line-height: 1;
+    .loginScreen__main {
+        margin: -5% auto 13% auto;
+    }
+
+    .loginScreen__main > h1 {
+        line-height: 1.2; 
     }
 
     .loginScreen__getStarted {

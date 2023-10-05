@@ -78,101 +78,9 @@ function LoginScreen() {
                         <SignupScreen />
                     ) : (
                         <>
-                        <h1>Laughter. Tears. Thrills. Find it all on Cinemate.</h1>
-                        <h2>Endless entertainment starts at just ₹ 149. Cancel anytime.</h2>
-                        <h3>Ready to watch? Enter your email to create or restart your membership.</h3>
-                        <div className='loginScreen__input'>
-                            <form>
-                                <input 
-                                    type='email'
-                                    placeholder='Email address'
-                                    id='email'
-                                />
-                                
-                                <button className='loginScreen__getStarted' onClick={ () => setSignIn(true) }>
-                                    Get Started <span><FaChevronRight className='loginScreen__getStartedIcon' /></span>
-                                </button>
-                            </form>
-                        </div>
-                    </>
-                    )} 
-                </div>
-            </div>
-            
-        </div>
-
-        <div className='firstSection'>
-                <div className='firstSection__left'>
-                    <h2 className='cardHeading'>Enjoy on your TV</h2>
-                    <p className='cardDescription'>Watch on smart TVs, PlayStation, Xbox, Chromecast, Apple TV, Blu-ray players and more.</p>
-                </div>    
-                <div className='firstSection__right'>
-                    <img src='https://www.curvedview.com/wp-content/uploads/2016/04/3d-tv-watching-movies-gaming-1024x676.jpg' alt='Movie in TV' />
-                </div>    
-        </div>
-
-        <div className='secondSection'>
-                <div className='secondSection__left'>
-                    <h2 className='cardHeading'>Download your shows to watch offline</h2>
-                    <p className='cardDescription'>Save your favourites easily and always have something to watch.</p>
-                </div>  
-                <div className='secondSection__right'>
-                    <img src='https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/mobile-0819.jpg' alt='Download and watch offline' />
-                </div>      
-        </div>
-
-        <div className='thirdSection'>
-            <div className='thirdSection__left'>
-                <h2 className='cardHeading'>Watch everywhere</h2>
-                <p className='cardDescription'>Stream unlimited movies and TV shows on your phone, tablet, laptop, and TV.</p>
-            </div>    
-            <div className='thirdSection__right'>
-                <img src={ thirdSection_image } alt='Watch Anywhere, Anytime' />
-            </div>   
-        </div>
-
-        <div className='fourthSection'>
-            <div className='fourthSection__left'>
-                <h2 className='cardHeading'>Create profiles for kids</h2>
-                <p className='cardDescription'>Send children on adventures with their favourite characters in a space made just for them—free with your membership.</p>
-            </div>    
-            <div className='fourthSection__right'>
-                <img src={ fourthSection_image } alt='Watch Anywhere, Anytime' />
-            </div>   
-        </div>
-
-        <div className='faqSection'>
-            <div className='faqSection__container'>
-                <div className='faqSection__content'>
-                    <h2>Frequently Asked Questions</h2>
-                    <div className='faqSection__questions'>
-                        <ul className='faqSection__unlist'>
-                           {
-                            data.map( (item) => (
-                                <li className='faqSection__list' key={item.id} id={ count++ } onClick={ () => showDescription(item.id) }>
-                                    <h3>
-                                        <button className='faqSection__button' >
-                                            <span className='faqSection__question'>{ item.question }</span>
-                                            {
-                                                (whichone === item.id) && show ? cross : plus    
-                                            }
-                                        </button>
-                                           
-                                    </h3>
-                                    {
-                                        (whichone === item.id) && show &&
-                                        <p className='description__section pre-line'>
-                                            { item.questionDescription }
-                                        </p>
-                                        
-                                    } 
-                                </li>
-                            ) )
-                           }
-
-                        </ul>
-                        <div className='loginSection__bottomContainer'>
-                            <div className='loginSection__bottomholder'>
+                            <div className='loginScreen__main'>
+                                <h1>Laughter. Tears. Thrills. Find it all on Cinemate.</h1>
+                                <h2>Endless entertainment starts at just ₹ 149. Cancel anytime.</h2>
                                 <h3>Ready to watch? Enter your email to create or restart your membership.</h3>
                                 <div className='loginScreen__input'>
                                     <form>
@@ -188,19 +96,115 @@ function LoginScreen() {
                                     </form>
                                 </div>
                             </div>
-                        </div>
-                        
-                    </div>
-                </div>
-                
-            </div> 
-        </div>
 
-        <footer className='loginScreen__footer'>
-            <div className='loginScreen__footerText'>
-                By Arshad with love <FaHeart className='heartIcon'/>
+                            <div className='loginScreen__content'>
+                                <div className='firstSection'>
+                                    <div className='firstSection__left'>
+                                        <h2 className='cardHeading'>Enjoy on your TV</h2>
+                                        <p className='cardDescription'>Watch on smart TVs, PlayStation, Xbox, Chromecast, Apple TV, Blu-ray players and more.</p>
+                                    </div>    
+                                    <div className='firstSection__right'>
+                                        <img src='https://www.curvedview.com/wp-content/uploads/2016/04/3d-tv-watching-movies-gaming-1024x676.jpg' alt='Movie in TV' />
+                                    </div>    
+                                </div>
+
+                                <div className='secondSection'>
+                                        <div className='secondSection__left'>
+                                            <h2 className='cardHeading'>Download your shows to watch offline</h2>
+                                            <p className='cardDescription'>Save your favourites easily and always have something to watch.</p>
+                                        </div>  
+                                        <div className='secondSection__right'>
+                                            <img src='https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/mobile-0819.jpg' alt='Download and watch offline' />
+                                        </div>      
+                                </div>
+
+                                <div className='thirdSection'>
+                                    <div className='thirdSection__left'>
+                                        <h2 className='cardHeading'>Watch everywhere</h2>
+                                        <p className='cardDescription'>Stream unlimited movies and TV shows on your phone, tablet, laptop, and TV.</p>
+                                    </div>    
+                                    <div className='thirdSection__right'>
+                                        <img src={ thirdSection_image } alt='Watch Anywhere, Anytime' />
+                                    </div>   
+                                </div>
+
+                                <div className='fourthSection'>
+                                    <div className='fourthSection__left'>
+                                        <h2 className='cardHeading'>Create profiles for kids</h2>
+                                        <p className='cardDescription'>Send children on adventures with their favourite characters in a space made just for them—free with your membership.</p>
+                                    </div>    
+                                    <div className='fourthSection__right'>
+                                        <img src={ fourthSection_image } alt='Watch Anywhere, Anytime' />
+                                    </div>   
+                                </div>
+
+                                <div className='faqSection'>
+                                    <div className='faqSection__container'>
+                                        <div className='faqSection__content'>
+                                            <h2>Frequently Asked Questions</h2>
+                                            <div className='faqSection__questions'>
+                                                <ul className='faqSection__unlist'>
+                                                {
+                                                    data.map( (item) => (
+                                                        <li className='faqSection__list' key={item.id} id={ count++ } onClick={ () => showDescription(item.id) }>
+                                                            <h3>
+                                                                <button className='faqSection__button' >
+                                                                    <span className='faqSection__question'>{ item.question }</span>
+                                                                    {
+                                                                        (whichone === item.id) && show ? cross : plus    
+                                                                    }
+                                                                </button>
+                                                                
+                                                            </h3>
+                                                            {
+                                                                (whichone === item.id) && show &&
+                                                                <p className='description__section pre-line'>
+                                                                    { item.questionDescription }
+                                                                </p>
+                                                                
+                                                            } 
+                                                        </li>
+                                                    ) )
+                                                }
+                                                </ul>
+
+                                                <div className='loginSection__bottomContainer'>
+                                                    <div className='loginSection__bottomholder'>
+                                                        <h3>Ready to watch? Enter your email to create or restart your membership.</h3>
+                                                        <div className='loginScreen__input'>
+                                                            <form>
+                                                                <input 
+                                                                    type='email'
+                                                                    placeholder='Email address'
+                                                                    id='email'
+                                                                />
+                                                                
+                                                                <button className='loginScreen__getStarted' onClick={ () => setSignIn(true) }>
+                                                                    Get Started <span><FaChevronRight className='loginScreen__getStartedIcon' /></span>
+                                                                </button>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+                                        
+                                    </div> 
+                                </div>
+
+                                <footer className='loginScreen__footer'>
+                                    <div className='loginScreen__footerText'>
+                                        By Arshad with love <FaHeart className='heartIcon'/>
+                                    </div>
+                                </footer>
+                            </div>
+                        </>
+                    )} 
+                </div>
             </div>
-        </footer>
+            
+        </div> 
 
 
     </div>
