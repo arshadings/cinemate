@@ -35,8 +35,8 @@ function SignupScreen() {
     <div className='signupScreen'>
         <form>
             <h1>Sign In</h1>
-            <input type='email' ref={emailRef} placeholder='Email' />
-            <input type='password' ref={passwordRef} placeholder='Password' />
+            <input type='email' ref={emailRef} className='email' placeholder='Email' />
+            <input type='password' ref={passwordRef} className='password' placeholder='Password' />
             <button type='submit' onClick={signIn}>Sign In</button>
             <h4>
                 <span className='signupScreen__gray'>New to Cinemate? </span>
