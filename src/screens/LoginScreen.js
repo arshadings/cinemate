@@ -13,7 +13,8 @@ function LoginScreen() {
 
     const [signIn, setSignIn] = useState(false); 
     const [show, setShow] = useState(false);
-    const [whichone, setWhichone] = useState(null)
+    const [whichone, setWhichone] = useState(null);
+    const [email, setEmail] = useState('')
     let count = 1;
     const plus = <VscAdd className='faqSection__plusIcon'/>;
     const cross = <RxCross1 className='faqSection__plusIcon'/>;
@@ -75,7 +76,7 @@ function LoginScreen() {
                 <div className='loginScreen__body'>
 
                     {signIn ? (
-                        <SignupScreen />
+                        <SignupScreen email={ email }/>
                     ) : (
                         <>
                             <div className='loginScreen__main'>
@@ -88,6 +89,7 @@ function LoginScreen() {
                                             type='email'
                                             placeholder='Email address'
                                             id='email'
+                                            onChange={ (e) => setEmail(e.target.value) }
                                         />
                                         
                                         <button className='loginScreen__getStarted' onClick={ () => setSignIn(true) }>

@@ -2,12 +2,13 @@ import React from 'react';
 import './PlansScreen.css';
 
 function PlansScreen({products, subscription, loadCheckout}) {
+    console.log("Subscription valid till: ", subscription.current_period_end)
 
   return (
     <div className='plansScreen'>
         <br />
         { subscription && (
-            <p>Current plan is valid till: {new Date(subscription?.current_period_end *1000).toLocaleDateString()}</p>
+            <p>Current plan is valid till: {new Date(subscription?.current_period_end *1000).toLocaleDateString('default', { day: '2-digit', month: 'short', year: 'numeric' })}</p>
         ) }
         {Object.entries(products).map(([productId, productData]) => {
             // TODO: add some logic to check if the user subscription is active...
