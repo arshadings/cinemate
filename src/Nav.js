@@ -26,7 +26,8 @@ function Nav({subscription}) {
   }, [] )
 
   const handleNavigation = () => {
-    if(subscription === ('basic' || 'standard' || 'premium'))
+    console.log("subscription in handlenavigation is: ", subscription )
+    if(subscription === 'basic' || 'standard' || 'premium')
        navigate('/')
     else
       alert("Please subscribe to any of the plans")

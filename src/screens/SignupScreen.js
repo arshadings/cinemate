@@ -2,7 +2,9 @@ import React, { useRef } from 'react';
 import { auth } from '../firebase';
 import './SignupScreen.css';
 
-function SignupScreen() {
+function SignupScreen({ email }) {
+
+    console.log("email: ", email);
 
     const emailRef = useRef(null);
     const passwordRef = useRef(null);
@@ -25,7 +27,9 @@ function SignupScreen() {
             emailRef.current.value,
             passwordRef.current.value
         ).then( (authUser) => {
+            console.log("before authUser")
             console.log(authUser)
+            console.log("after authUser")
         } ).catch( (error) => {
             alert(error.message);
         } )
@@ -35,7 +39,7 @@ function SignupScreen() {
     <div className='signupScreen'>
         <form>
             <h1>Sign In</h1>
-            <input type='email' ref={emailRef} className='email' placeholder='Email' />
+            <input type='email' ref={emailRef} className='email' placeholder='Email' value={ email }/>
             <input type='password' ref={passwordRef} className='password' placeholder='Password' />
             <button type='submit' onClick={signIn}>Sign In</button>
             <h4>
