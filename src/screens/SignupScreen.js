@@ -1,8 +1,10 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { auth } from '../firebase';
 import './SignupScreen.css';
 
 function SignupScreen({ email }) {
+
+    const [emailId, setEmailId] = useState('')
 
     console.log("email: ", email);
 
@@ -39,7 +41,7 @@ function SignupScreen({ email }) {
     <div className='signupScreen'>
         <form>
             <h1>Sign In</h1>
-            <input type='email' ref={emailRef} className='email' placeholder='Email' value={ email }/>
+            <input type='email' ref={emailRef} className='email' placeholder='Email' value={ email ? email : emailId } onChange={(e) => setEmailId(e.target.value)}/>
             <input type='password' ref={passwordRef} className='password' placeholder='Password' />
             <button type='submit' onClick={signIn}>Sign In</button>
             <h4>

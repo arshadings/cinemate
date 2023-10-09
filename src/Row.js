@@ -2,10 +2,12 @@ import React, { useEffect, useState } from 'react';
 import './Row.css';
 import axios from './axios';
 import { AiFillStar } from "react-icons/ai";
+import { useNavigate } from 'react-router-dom';
 
 function Row({title, fetchURL, isLargeRow = false}) {
 
     const [movies, setMovies] = useState([]);
+    const navigate = useNavigate()
     const baseURL = "https://image.tmdb.org/t/p/original/";
 
     useEffect( () => {
@@ -37,6 +39,7 @@ function Row({title, fetchURL, isLargeRow = false}) {
                         isLargeRow ? movie.poster_path : movie.backdrop_path
                         }`} 
                         alt={movie.title} 
+                        onClick= { () => navigate(`/trailer/${movie.id}`) }
                       />
                     </div>
                     <div className='row__movieDetails'>

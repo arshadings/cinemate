@@ -90,6 +90,7 @@ function LoginScreen() {
                                             placeholder='Email address'
                                             id='email'
                                             onChange={ (e) => setEmail(e.target.value) }
+                                            required
                                         />
                                         
                                         <button className='loginScreen__getStarted' onClick={ () => setSignIn(true) }>

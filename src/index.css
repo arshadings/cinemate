@@ -16,4 +16,7 @@ code {
     monospace;
 }
 
+body > iframe { 
+  display: none 
+}
 

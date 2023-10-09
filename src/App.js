@@ -7,6 +7,7 @@ import { auth } from './firebase';
 import { useDispatch, useSelector } from 'react-redux';
 import { login, logout, selectUser } from './features/userSlice';
 import ProfileScreen from './screens/ProfileScreen';
+import VideoScreen from './screens/VideoScreen';
 
 
 function App() {
@@ -38,6 +39,7 @@ function App() {
             <Routes>
               <Route exact path='/' element={ <HomeScreen /> } /> 
               <Route path='/profile' element={ <ProfileScreen /> } />
+              <Route path='/trailer/:id' exact element={ <VideoScreen /> } />
             </Routes>
           )
         }
