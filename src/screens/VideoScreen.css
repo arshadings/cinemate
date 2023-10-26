@@ -15,7 +15,6 @@
     left: 0;
     width: 80px;
     object-fit: contain;
-    padding-left: 20px;
     cursor: pointer;
 }
 
@@ -31,8 +30,14 @@
 
 @media only screen and (max-width: 640px) {
     .youtube-container {
-      /* height = 100 * (9 / 16) = 56.25 */
       height: 56.25vw;
-      
+    }
+
+    .video-background {
+      height: 100vh;
+      padding-top: 45%;
+      background-color: #000;
+      position: fixed;
+      width: 100%;
     }
   }

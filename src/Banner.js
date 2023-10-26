@@ -2,14 +2,16 @@ import React, { useEffect, useState } from 'react';
 import './Banner.css';
 import axios from './axios';
 import requests from './Requests';
+import { useNavigate } from 'react-router-dom';
 
 function Banner() {
 
     const [movie, setMovie] = useState([]);
+    const navigate = useNavigate()
 
     useEffect( () => {
         async function fetchData(){
-            const request = await axios.get(requests.fetchCinemateOriginals);
+            const request = await axios.get(requests.fetchUpcoming);
             setMovie(
                 request.data.results[
                     Math.floor(Math.random() * request.data.results.length - 1)
@@ -40,11 +42,13 @@ function Banner() {
                 {movie?.title || movie?.name || movie?.original_name}
             </h1>
             <div className='banner__buttons'>
-                <button className='banner__button'>Play</button>
+                <button className='banner__button' 
+                    onClick= { () => navigate(`/trailer/${movie.id}`) }
+                >Play</button>
                 <button className='banner__button'>My List</button>
             </div>
             <h1 className='banner__description'>
-                {truncate( movie?.overview, 150)}
+                {truncate( movie?.overview, 250)}
             </h1>
         </div>
         <div className='banner--fadeBottom' />

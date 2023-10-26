@@ -8,6 +8,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { login, logout, selectUser } from './features/userSlice';
 import ProfileScreen from './screens/ProfileScreen';
 import VideoScreen from './screens/VideoScreen';
+import InfoScreen from './screens/InfoScreen';
 
 
 function App() {
@@ -40,6 +41,7 @@ function App() {
               <Route exact path='/' element={ <HomeScreen /> } /> 
               <Route path='/profile' element={ <ProfileScreen /> } />
               <Route path='/trailer/:id' exact element={ <VideoScreen /> } />
+              <Route path='/details/:id' exact element={ <InfoScreen /> } />
             </Routes>
           )
         }

@@ -18,7 +18,7 @@ function ProfileScreen() {
     const [subscription, setSubscription] = useState('');
     const [loading, setLoading] = useState(false)
 
-    console.log('subscription is: ', subscription)
+    //console.log('subscription is: ', subscription)
 
 
     useEffect( () => {
@@ -58,8 +58,8 @@ function ProfileScreen() {
         });
     }, [] );
 
-    console.log('list of products: ', products);
-    console.log('subscription: ', subscription);
+    //console.log('list of products: ', products);
+    //console.log('subscription: ', subscription);
 
     const loadCheckout = async (priceId) => {
         setLoading(true)

@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 
 function Nav({subscription}) {
 
-  console.log('role is: ', subscription)
+  //console.log('role is: ', subscription)
 
   const [show, setShow] = useState(false);
   const navigate = useNavigate()

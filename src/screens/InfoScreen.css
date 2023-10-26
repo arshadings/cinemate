@@ -1,0 +1,9 @@
+.InfoScreen__body {
+    height: 100vh;
+    background-color: #000;
+}
+
+.InfoScreen__container {
+    padding-top: 50px;
+    color: #fff;
+}

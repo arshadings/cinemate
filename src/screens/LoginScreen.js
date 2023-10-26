@@ -180,8 +180,9 @@ function LoginScreen() {
                                                                     type='email'
                                                                     placeholder='Email address'
                                                                     id='email'
+                                                                    onChange={ (e) => setEmail(e.target.value) }
                                                                 />
-                                                                
+
                                                                 <button className='loginScreen__getStarted' onClick={ () => setSignIn(true) }>
                                                                     Get Started <span><FaChevronRight className='loginScreen__getStartedIcon' /></span>
                                                                 </button>
