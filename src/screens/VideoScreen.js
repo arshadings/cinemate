@@ -6,6 +6,9 @@ import logo from '../assets/logo.png';
 import avatar from '../assets/avatar.png'
 import { useNavigate } from 'react-router-dom';
 
+import { AiOutlineClose } from "react-icons/ai";
+import Loader from './Loader';
+
 
 function VideoScreen() {
 
@@ -17,10 +20,12 @@ function VideoScreen() {
     let videoURL = `/movie/${movieId}?api_key=${API_KEY}&append_to_response=videos`;
 
     const [video, setVideo] = useState('');
+    const [loading, setLoading] = useState(false)
     const navigate = useNavigate()
 
     useEffect( () => {
         async function fetchVideos() {
+          setLoading(true)
           const videoRequest = await axios.get( videoURL );
           //console.log( "videoRequest: ", videoRequest )
           const resultLength = videoRequest.data.videos.results.length;
@@ -30,6 +35,7 @@ function VideoScreen() {
           else
             setVideo(null)
           console.log('video is: ', videoRequest.data.videos)
+          setLoading(false)
           return videoRequest;
         }
         fetchVideos();
@@ -60,15 +66,25 @@ function VideoScreen() {
 
   return (
     <div className='head'>
-        <div className='navbar'>
-        <img src={ logo }  className='logo' onClick={ () => navigate('/') } alt='Cinemate logo'/>
-        <img src={ avatar } className='avatar' onClick={ () => navigate('/profile') } alt='Avatar'/>
-        </div>
-        <div className="video-background" >
-            {
-                video ? renderTrailer() : <p>Not Found</p>
-            }
+      <div className='navbar'>
+      <img src={ logo }  className='logo' onClick={ () => navigate('/') } alt='Cinemate logo'/>
+      <img src={ avatar } className='avatar' onClick={ () => navigate('/profile') } alt='Avatar'/>
       </div>
+      <div className="video-background" >
+        <div className='video__close' onClick={ () => navigate('/') }>
+        <AiOutlineClose />
+        </div>
+          {
+            video ? renderTrailer() : <Loader />
+          }
+      </div>
+
+      {/* <div>
+        {
+          loading && <Loader />
+        }
+      </div> */}
+
     </div>
   )
 }

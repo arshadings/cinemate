@@ -8,6 +8,7 @@ import { auth } from '../firebase';
 import PlansScreen from './PlansScreen';
 import { loadStripe } from '@stripe/stripe-js';
 import db from '../firebase';
+import Loader from './Loader';
 
 function ProfileScreen() {
 
@@ -114,13 +115,7 @@ function ProfileScreen() {
                     </div>
                     <div>
                         {
-                            loading && 
-                            <div className='subscription__loading'>
-                                <div className='loader__symbol'>
-                                    <span className="loader"></span>
-                                </div>
-                                
-                            </div>
+                            loading && <Loader />
                         }
                     </div>
                 </div>

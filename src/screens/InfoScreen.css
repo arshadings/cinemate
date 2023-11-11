@@ -1,9 +1,154 @@
 .InfoScreen__body {
-    height: 100vh;
-    background-color: #000;
+    background-color: rgb(0, 0, 0);
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 .InfoScreen__container {
     padding-top: 50px;
     color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.InfoScreen__banner {
+    height: 70%;
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    overflow: hidden;
+}
+
+.infoScreen__bannerImages {
+    height: 100%;
+    width: 100%;
+}
+
+.infoScreen__details {
+    color: #fff;
+    padding: 0 25px 25px 25px;
+}
+
+.infoScreen__movieSubDetails {
+    display: flex;
+    color: #a3a3a3;
+    flex-direction: row;
+    margin: 20px 0;
+}
+
+.infoScreen__movieSubDetailsItem1{
+    margin-right: 10px;
+}
+
+.infoScreen__movieSubDetailsItem {
+    margin: 0 10px;
+    font-size: 16px;
+}
+
+.infoScreen__detailsBorder {
+    border: 1px solid #a3a3a3;
+    padding: 0 10px;
+}
+
+.infoScreen__playButton {
+    padding: 12px 50px;
+    background-color: #e50914;
+    border: none;
+    color: #fff;
+    font-size: 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.infoScreen__playButton:hover {
+    background-color: #d20711;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.infoScreen__movieDescription {
+    text-align: justify;
+}
+
+.infoScreen__fadeBottom {
+    position: relative;
+    top: 0;
+    z-index: 100;
+    margin-top: -60px;
+    height: 6.4rem;
+    background-image: linear-gradient(
+        180deg,
+        transparent,
+        rgba(0, 0, 0, 0.9),
+        rgb(0, 0, 0)
+    );
+}
+
+.infoScreen__subDetails {
+    font-size: 18px;
+    margin-top: 15px;
+}
+
+.infoScreen__title {
+    color: #a3a3a3;
+}
+
+.infoScreen__genres {
+    margin-right: 20px;
+}
+
+.infoScreen__castSection {
+    display: flex;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    padding-top: 7px;
+}
+
+.infoScreen__castSection::-webkit-scrollbar {
+    display: none;
+}
+
+.infoScreen__castDetails {
+    position: relative;
+}
+
+.infoScreen__castImg {
+    max-height: 200px;
+    border-radius: 5px;
+    object-fit: contain;
+    transition: transform 450ms;
+    opacity: 1;
+    margin-right: 3px;
+}
+
+.infoScreen__castName {
+    font-size: 14px;
+}
+
+.infoScreen__cName {
+    color: #a3a3a3;
+}
+
+
+
+
+
+@media only screen and (max-width: 640px) {
+    .InfoScreen__banner {
+        height: 100%;
+        width: 100%;
+    }
+
+    .infoScreen__playButton {
+        width: 100%;
+        padding: 13px 0;
+        font-size: 24px;
+    }
+
+    .infoScreen__castImg {
+        max-height: 135px;
+    }
 }

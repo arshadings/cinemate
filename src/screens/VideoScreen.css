@@ -26,6 +26,15 @@
  
 .youtube-container {
   height: 100vh;
+  background-color: #000;
+}
+
+.video__close {
+  color: #fff;
+  font-size: 35px;
+  float: right;
+  margin-right: 10px;
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 640px) {
@@ -35,7 +44,7 @@
 
     .video-background {
       height: 100vh;
-      padding-top: 45%;
+      padding-top: 35%;
       background-color: #000;
       position: fixed;
       width: 100%;

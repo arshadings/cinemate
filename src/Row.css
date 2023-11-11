@@ -27,7 +27,6 @@
 
 .row__poster:hover {
     transform: scale(1.11);
-    opacity: 1;
     position: static;
     border: 2px solid #fff;
 }
@@ -40,13 +39,11 @@
     width: 100%;
 }
 
-.row__movieDetails {
-    display: none;
-    position: absolute;
-    
+.row__movieName {
+    margin: 6px 10px 2px 7px;
 }
 
-.row__posterDetails:hover .row__movieDetails{
+.row__posterDetails:hover {
     display: block;
 }
 
@@ -70,7 +67,7 @@
     cursor: pointer;
 }
 
-.container{
+.buttons__container{
     transition: .5s ease;
     opacity: 0;
     position: absolute;
@@ -85,8 +82,12 @@
     opacity: 0.3;
   }
 
-.row__posterDetails:hover .container {
-    opacity: 1;
+.row__posterDetails:hover .buttons__container, .row__posterLarge{
+    opacity: 1 !important;
+}
+
+.row__posterLarge:hover {
+    opacity: 1 !important;
 }
 
 @media only screen and (max-width: 640px) {

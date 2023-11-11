@@ -3,6 +3,8 @@ import './Banner.css';
 import axios from './axios';
 import requests from './Requests';
 import { useNavigate } from 'react-router-dom';
+import { GoPlay } from "react-icons/go";
+import { FiInfo } from "react-icons/fi";
 
 function Banner() {
 
@@ -36,6 +38,7 @@ function Banner() {
             backgroundSize: 'cover',
             backgroundImage: `url('https://image.tmdb.org/t/p/original/${movie?.backdrop_path}')`,
             backgroundPosition: 'center center',
+            backgroundRepeat: 'no-repeat'
     }}>
         <div className='banner__contents'>
             <h1 className='banner__title'>
@@ -44,8 +47,8 @@ function Banner() {
             <div className='banner__buttons'>
                 <button className='banner__button' 
                     onClick= { () => navigate(`/trailer/${movie.id}`) }
-                >Play</button>
-                <button className='banner__button'>My List</button>
+                ><GoPlay style={{margin: "-2px 5px"}}/>Play</button>
+                <button className='banner__button' onClick={ () => navigate(`/details/${movie.id}`) }><FiInfo style={{margin: "-2px 5px"}}/>Info</button>
             </div>
             <h1 className='banner__description'>
                 {truncate( movie?.overview, 250)}

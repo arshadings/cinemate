@@ -17,15 +17,18 @@ function HomeScreen() {
         fetchURL={requests.fetchCinemateOriginals}
         isLargeRow
       />
-      <Row title='Trending Now' fetchURL={requests.fetchTrending} />
       <Row title='Upcoming Movies' fetchURL={requests.fetchUpcoming} />
       <Row title='Top Rated' fetchURL={requests.fetchTopRated} />
       <Row title='Drama Movies' fetchURL={requests.fetchDramaMovies} />
       <Row title='Action Movies' fetchURL={requests.fetchActionMovies} />
+      <Row title='Family Movies' fetchURL={requests.fetchFamilyMovies} />
+      <Row title='Adventure Movies' fetchURL={requests.fetchAdventureMovies} />
       <Row title='Comedy Movies' fetchURL={requests.fetchComedyMovies} />
       <Row title='Horror Movies' fetchURL={requests.fetchHorrorMovies} />
       <Row title='Romance Movies' fetchURL={requests.fetchRomanceMovies} />
-      <Row title='Documentaries' fetchURL={requests.fetchDocumentaries} />
+      <Row title='History Movies' fetchURL={requests.fetchHistoryMovies} />
+      <Row title='Sci-Fi Movies' fetchURL={requests.fetchScienceFictionMovies} />
+      <Row title='Animation Movies' fetchURL={requests.fetchAnimationMovies} />
     </div>
   )
 }
