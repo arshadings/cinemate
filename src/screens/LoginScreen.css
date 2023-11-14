@@ -1,6 +1,6 @@
 .loginScreen {
     position: relative;
-    height: 100%;
+    height: 110vh;
     background: url('../assets/login_background.jpeg') center no-repeat;
     background-size: cover; 
 }
@@ -68,7 +68,7 @@
 .loginScreen__gradient {
     width: 100%;
     z-index: 1;
-    height: 100vh;
+    height: 110vh;
     background: rgba(0, 0, 0, 0.2);
     background-image: linear-gradient(
         to top,
@@ -339,7 +339,7 @@
     }
 
     .loginScreen__main {
-        margin: -5% auto 13% auto;
+        margin: -5% auto 20% auto;
     }
 
     .loginScreen__main > h1 {

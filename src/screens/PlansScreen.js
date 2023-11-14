@@ -6,7 +6,6 @@ function PlansScreen({products, subscription, loadCheckout}) {
 
   return (
     <div className='plansScreen'>
-        <br />
         { subscription && (
             <p>Current plan is valid till: {new Date(subscription?.current_period_end *1000).toLocaleDateString('default', { day: '2-digit', month: 'short', year: 'numeric' })}</p>
         ) }
@@ -19,7 +18,7 @@ function PlansScreen({products, subscription, loadCheckout}) {
                 <div key={productId} className={`${isCurrentPackgae && 'plansScreen__plan--disabled' } plansScreen__plan`}>
                     <div className='plansScreen __info'>
                         <h5 className='PlanScreen__planName'>{productData.name}</h5>
-                        <h6 className='planScreen__planDescription'>{productData.description}</h6>
+                        <p className='planScreen__planDescription'>{productData.description}</p>
                     </div>
 
                     <button 

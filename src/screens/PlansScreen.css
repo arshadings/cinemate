@@ -1,7 +1,7 @@
 .plansScreen__plan {
     display: flex;
     justify-content: space-between;
-    padding: 20px;
+    padding: 20px 0;
     opacity: 0.8;
 }
 
@@ -24,6 +24,9 @@
     color: #000;
 }
 
+.PlanScreen__planName {
+    font-weight: 400;
+}
 
 @media only screen and (max-width: 640px) {
     .plansScreen__plan--disabled > button {

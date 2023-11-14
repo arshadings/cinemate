@@ -26,11 +26,7 @@ function Nav({subscription}) {
   }, [] )
 
   const handleNavigation = () => {
-    console.log("subscription in handlenavigation is: ", subscription )
-    if(subscription === 'basic' || 'standard' || 'premium')
-       navigate('/')
-    else
-      alert("Please subscribe to any of the plans")
+    navigate('/')
   }
 
   return (
@@ -41,6 +37,7 @@ function Nav({subscription}) {
             className='nav__logo'
             src={ logo } 
             alt='Cinemate logo' 
+            title='Home'
           />
 
           <img 
@@ -48,6 +45,7 @@ function Nav({subscription}) {
             className='nav__avatar'
             src={ avatar }
             alt='avatar' 
+            title='Profile'
           />
       </div>
     </div>

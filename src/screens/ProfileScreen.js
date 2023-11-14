@@ -95,28 +95,30 @@ function ProfileScreen() {
     <div className='profileScreen'>
         <Nav subscription={subscription.role}/>
         <div className='profileScreen__body'>
-            <h1>Subscription details</h1>
-            <div className='profileScreen__info'>
-                <img src={avatar} alt='avatar' />
-                <div className='profileScreen__details'>
-                    <h2>Your email id: {activeUser.email}</h2>
-                    <div className='profileScreen__plans'>
-                        <p className='profileScreen__plansHeading'>Plans</p>
-                        
-                        <PlansScreen 
-                        products={products}                        
-                        subscription={subscription}
-                        loadCheckout={loadCheckout}
-                        />
-                        <button 
-                            className='profileScreen__signOut' 
-                            onClick={ () => auth.signOut() }
-                        >Sign Out</button>
-                    </div>
-                    <div>
-                        {
-                            loading && <Loader />
-                        }
+            <div className='profileScreen__mainSection'>
+                <h1>Subscription details</h1>
+                <div className='profileScreen__info'>
+                    <img src={avatar} alt='avatar' />
+                    <div className='profileScreen__details'>
+                        <h2>Email id: {activeUser.email}</h2>
+                        <div className='profileScreen__plans'>
+                            <p className='profileScreen__plansHeading'>Plans</p>
+                            
+                            <PlansScreen 
+                            products={products}                        
+                            subscription={subscription}
+                            loadCheckout={loadCheckout}
+                            />
+                            <button 
+                                className='profileScreen__signOut' 
+                                onClick={ () => auth.signOut() }
+                            >Sign Out</button>
+                        </div>
+                        <div>
+                            {
+                                loading && <Loader />
+                            }
+                        </div>
                     </div>
                 </div>
             </div>
