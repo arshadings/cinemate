@@ -75,15 +75,15 @@ function VideoScreen() {
         <AiOutlineClose />
         </div>
           {
-            video ? renderTrailer() : <Loader />
+            video ? renderTrailer() : <p>Loading...</p>
           }
       </div>
 
-      {/* <div>
+      <div>
         {
           loading && <Loader />
         }
-      </div> */}
+      </div>
 
     </div>
   )

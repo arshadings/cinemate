@@ -64,6 +64,11 @@
 
     .banner__contents {
         height: 170px;
+        margin-left: 20px;
+    }
+
+    .banner__description {
+        width: 93%;
     }
 
     .banner__title {
@@ -71,6 +76,6 @@
     }
 
     .banner--fadeBottom {
-        height: 4.855em;
+        height: 5.3em;
     }
 }

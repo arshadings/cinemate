@@ -211,7 +211,15 @@ function InfoScreen() {
                       }` }
                       alt='Cast Member'
                     />
-                    <p className='infoScreen__castName'>{ c.name }<br /> As <br /><span className='infoScreen__cName'>{ c.character }</span></p>
+
+                    <p className='infoScreen__castName'>{ c.name }<br /> 
+                      As <br />
+                      {
+                        ( c.character === "" ) ? ((c.gender === 1) ? <span className='infoScreen__cName'>herself</span> : <span className='infoScreen__cName'>himself</span>) : <span className='infoScreen__cName'>{ c.character }</span>
+                      }
+
+                    </p>
+
                   </div>
                 )
               )
