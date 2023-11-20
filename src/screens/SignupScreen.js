@@ -5,7 +5,7 @@ import { ImSpinner11 } from "react-icons/im";
 
 function SignupScreen({ email }) {
 
-    const [emailId, setEmailId] = useState('')
+    const [emailId, setEmailId] = useState(email)
     const [spin, setSpin] = useState(false)
 
     console.log("email: ", email);
@@ -21,7 +21,7 @@ function SignupScreen({ email }) {
         ).then((authUser) => {
             console.log(authUser)
         } ).catch( (error) => {
-            alert('Please enter valid email and  new password and click on Sign Up now.')
+            alert('Please enter valid email and new password and click on Sign Up now.')
         } )
     }
 
@@ -46,7 +46,7 @@ function SignupScreen({ email }) {
     <div className='signupScreen'>
         <form>
             <h1>Sign In</h1>
-            <input type='email' ref={emailRef} className='email' placeholder='Email' value={ email ? email : emailId } onChange={(e) => setEmailId(e.target.value)}/>
+            <input type='email' ref={emailRef} className='email' placeholder='Email' value={ emailId } onChange={(e) => setEmailId(e.target.value)}/>
             <input type='password' ref={passwordRef} className='password' placeholder='Password' />
             <button type='submit' onClick={signIn} className={`${spin && 'button__fade'}`}>Sign In 
             {
