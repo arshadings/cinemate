@@ -1,46 +1,67 @@
-# Getting Started with Create React App and Redux
+# Cinemate: Unleash The Cinematic Universe, Anywhere - Anytime
+Access the application from this link:
+[Open application](https://cinemate-83ca8.web.app)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
+## About the Application:
+1. Cinemate is your all-in-one movie streaming application designed for a delightful cinematic experience.
+2. With Cinemate, users can enjoy a vast library of movies online, just like Netflix.
+3. With Cinemate, dive into a world of entertainment with a user-friendly interface, seamless navigation, smooth playback, high quality streaming and a curated selection of films across the genres.
+4. Whether you're into thrilling adventures, heartwarming dramas, or laugh-out-loud comedies, Cinemate has something for everyone.
+5. Explore the future of online movie streaming with Cinemate - where movie nights become memorable moments.
+<br>
 
-## Available Scripts
+## Tech Stack used to build this application:
+1. Google Firebase: firebase is used to do the user authentication.
+2. TMDB API: The Movie Database(TMDB) is an API which helps us by providing the details of the movies.
+3. Stripe: Stripe is a payment processing gateway which helps the merchants to accepts the payments from their customers.
+4. React JS: Cinemate is built completely on reactjs.
+<br>
 
-In the project directory, you can run:
+## Special feature of the application:
+### Payments: 
+1. Cinemate is built to accept the payments from the users just like the realtime payments.
+2. Stripe is the payment gateway used to accepts the payment.
+3. Even though, for now only the test environment of stripe is implemented. It still gives you the realtime payment experience.
+4. If you are interested to test the functionality and worried to provide your card details. Use the below dummy card details.
 
-### `npm start`
+&emsp; &emsp;  Card number: 4242 4242 4242 4242
+<br>
+&emsp; &emsp; Expiry: 04/24
+  <br>
+&emsp; &emsp; CVV: 424
+  <br>
+&emsp; &emsp; Cardholder name: any name
+  <br>
+&emsp; &emsp; Billing address: any address
+  <br>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Screens of the application:
+### 1. Landing Screen
+<img width="959" alt="1" src="https://github.com/arshadings/cinemate/assets/111176777/0bb15604-94fc-46cb-baef-f13ffb9f1885">
+<img width="960" alt="2" src="https://github.com/arshadings/cinemate/assets/111176777/603faf35-c587-4c14-97cc-93ec59582b4b">
+<br>
 
-### `npm test`
+### 2. Sign Up Screen
+<img width="960" alt="3" src="https://github.com/arshadings/cinemate/assets/111176777/e097cf20-e443-41ac-b2ef-c5ba4991caa3">
+<br>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 3. Home Screen
+<img width="960" alt="4" src="https://github.com/arshadings/cinemate/assets/111176777/281e68b6-49a2-45be-8d5c-10bf7668141d">
+<img width="960" alt="5" src="https://github.com/arshadings/cinemate/assets/111176777/65344a89-3ddd-41ba-b2ff-70f2b6734c2f">
+<br>
 
-### `npm run build`
+### 4. Movie Details Screen
+<img width="960" alt="6" src="https://github.com/arshadings/cinemate/assets/111176777/b3808375-f923-4fd3-a7ed-87c74e980cf7">
+<br>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 5. Video Screen
+<img width="960" alt="7" src="https://github.com/arshadings/cinemate/assets/111176777/0865f2a6-cf69-4ce2-b69d-6666049e347b">
+<br>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 6. Subscription Details Screen
+<img width="960" alt="8" src="https://github.com/arshadings/cinemate/assets/111176777/19745ee1-ead9-4b8a-832f-e3bbd0ce93c2">
+<br>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+### 7. Payment Screen
+<img width="960" alt="9" src="https://github.com/arshadings/cinemate/assets/111176777/7633e831-0807-48e6-982a-fd9f3201eec3">
